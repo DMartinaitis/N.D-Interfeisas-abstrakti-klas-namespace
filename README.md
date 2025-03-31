@@ -1,0 +1,1 @@
+# N.D-Interfeisas-abstrakti-klas-namespace
