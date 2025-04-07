@@ -18,6 +18,10 @@ class Admin extends AbstractUser implements AuthInterface {
  public function logout() {
  $this->logActivity("Admin $this->name logged out.");
  return "Admin logged out.";
- }
+}
+public function saveToDatabase() {
+$db = Database::connect();
+$stmt = $db->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
+$stmt->execute([$this->name, $this->email, $this->password, 'Admin']); }
 }
 ?>
