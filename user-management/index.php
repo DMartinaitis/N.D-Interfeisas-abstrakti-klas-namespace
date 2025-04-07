@@ -5,8 +5,10 @@ use App\Models\RegularUser;
 use App\Services\AuthService;
 // Create an Admin user
 $admin = new Admin("Alice", "alice@example.com", "admin123");
+$admin->saveToDatabase();
 // Create a Regular User
 $user = new RegularUser("Bob", "bob@example.com", "user123");
+$user->saveToDatabase();
 // Create AuthService
 $authService = new AuthService();
 // Admin Login
